@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
             transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"));
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && characterBody.velocity.y <= 0.05f)
+        if (Input.GetKeyDown(KeyCode.Space) && IsTouchingFloor())
         {
             Jump();
         }
@@ -29,5 +29,18 @@ public class CharacterController : MonoBehaviour
     {
         //characterBody.velocity = Vector3.up * 10f;
         characterBody.AddForce(Vector3.up * 500f);
+    }
+
+    private bool IsTouchingFloor()
+    {
+        RaycastHit hit;
+        // Parameters:
+        // - The center from where we shoot
+        // - Radius of the sphere
+        // - Direction of the sphere
+        // - hit parameter
+        // - Distance the sphere
+        bool result =  Physics.SphereCast(transform.position, 0.15f, -transform.up, out hit, 1f);
+        return result;
     }
 }
