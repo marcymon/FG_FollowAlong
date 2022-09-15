@@ -181,12 +181,12 @@ GameObject:
   - component: {fileID: 150210419}
   - component: {fileID: 150210423}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Navmesh Agent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &150210419
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3096,7 +3096,7 @@ GameObject:
   - component: {fileID: 2129807590}
   - component: {fileID: 2129807592}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Trigger Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
