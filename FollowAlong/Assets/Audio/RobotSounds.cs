@@ -7,6 +7,11 @@ public class RobotSounds : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip jumpingFX;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public void PlayJumpSound()
     {
         audioSource.PlayOneShot(jumpingFX);
