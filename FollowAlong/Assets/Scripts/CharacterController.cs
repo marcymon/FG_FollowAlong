@@ -7,6 +7,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private Rigidbody characterBody;
     [SerializeField] private float speed = 2f;
+    [SerializeField] private float rotationSpeed = 15f;
 
     void Update()
     {
@@ -14,7 +15,7 @@ public class CharacterController : MonoBehaviour
         {
             if (Input.GetAxis("Horizontal") != 0)
             {
-                transform.Rotate(transform.up * speed * Time.deltaTime * Input.GetAxis("Horizontal"));
+                transform.Rotate(transform.up * rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
             }
 
             if (Input.GetAxis("Vertical") != 0)
