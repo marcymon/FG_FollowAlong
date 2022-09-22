@@ -7,16 +7,16 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
-    [SerializeField] private TrajectoryLine lineRenderer;
+    [SerializeField] private TrajectoryLine trajectoryLine;
 
     private void Update()
     {
         bool IsPlayerTurn = playerTurn.IsPlayerTurn();
-        lineRenderer.enabled = IsPlayerTurn;
+        trajectoryLine.enabled = IsPlayerTurn;
         if (IsPlayerTurn)
         {
             Vector3 force = transform.forward * 700f + transform.up * 300f;
-            lineRenderer.DrawCurvedTrajectory(force, shootingStartPosition.position);
+            trajectoryLine.DrawCurvedTrajectory(force, shootingStartPosition.position);
             if (Input.GetKeyDown(KeyCode.V))
             {
                 TurnManager.GetInstance().TriggerChangeTurn();
